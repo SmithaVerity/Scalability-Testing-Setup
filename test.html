@@ -3,21 +3,30 @@
  <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title> Scalability Testing </title>
-
-  </head>
-  <body onLoad="myhost()">
-    <div class="main_page">
-        <div class="banner">
-          <div id="about"></div>
-          This Page is to display the IP address of the machine you are connecting to
-        </div>
-        <div> Your IP Address is: </div>
-        <p id="hostname"></p>
-    </div>
-    <script>
-        function myhost() {
-            var h = location.hostname;
-            document.getElementById("hostname").innerHTML = h;
-        }
+<script src=
+"https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
     </script>
+
+      <script>
+
+    /* Add "https://api.ipify.org?format=json" statement
+               this will communicate with the ipify servers in
+               order to retrieve the IP address $.getJSON will
+               load JSON-encoded data from the server using a
+               GET HTTP request */
+
+    $.getJSON("https://api.ipify.org?format=json", function(data) {
+
+        // Setting text of element P with id gfg
+        $("#gfg").html(data.ip);
+    })
+    </script>
+  </head>
+  <body>
+    <div class="main_page">
+       <center>
+           <h3>Public IP Address of user is:</h3>
+           <p id="gfg"></p>
+       </center>
+    </div>
 </html>
