@@ -7,7 +7,7 @@
   <body>
     <div class="main_page">
        <center>
-           <h3>Public IP Address of user is:</h3>
+           <h3>Public IP Address this instance is:</h3>
            <p id="gfg"><?php echo $realIP = file_get_contents("http://ipecho.net/plain"); ?></p>
        </center>
     </div>
