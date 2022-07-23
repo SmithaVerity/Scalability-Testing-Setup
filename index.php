@@ -22,6 +22,7 @@ function getIPAddress() {
   }  
   return $ip;  
 }
-
-echo getIPAddress();
+echo " ,  ";
+//echo getIPAddress();
+echo $realIP = file_get_contents("http://ipecho.net/plain");
 ?> 
